@@ -1,1 +1,63 @@
-<nav></nav>
+<!--
+  Title: nav.component.html
+  Author: Professor Richard Krasso and Brock Hemsouvanh
+  Date: 6/5/24
+  Description: Navigation component template for Nodebucket application
+-->
+
+<nav class="ps-3 navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+  <!-- Brand link to home page -->
+  <a routerLink="/" class="navbar-brand">Nodebucket</a>
+
+  <!-- Toggler button for collapsed navbar on small screens -->
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarResponsive"
+    aria-controls="navbarResponsive"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto p-2">
+      <!-- Home link -->
+      <li class="nav-item">
+        <a routerLink="/home" class="nav-link">Home</a>
+      </li>
+      <!-- Contact Us link -->
+      <li class="nav-item">
+        <a routerLink="/contact" class="nav-link">Contact Us</a>
+      </li>
+
+      <li *ngIf="isSignedIn" class="nav-item dropdown">
+      <a href="#"
+      class="nav-link pe-3"
+      id="navbarDropdown"
+      role="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      >
+      <span class="material-icons">person</span>
+      </a>
+
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <li class="dropdown-item">
+          Signed in as {{ appUser.fullName }}
+        </li>
+        <hr />
+        <li>
+          <a routerLink="/tasks" class="dropdown-item">My Tasks</a>
+        </li>
+        <li>
+          <a (click)="signout()" class="dropdown-item link">Sign Out</a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+  </div>
+</nav>

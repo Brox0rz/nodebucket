@@ -1,10 +1,10 @@
 /**
  * Title: app.component.ts
  * Author: Professor Krasso
+ * Updated by Brock Hemsouvanh 6/7/2024
  * Date: 8/5/23
  */
 
-// imports statements
 import { Component } from '@angular/core';
 
 @Component({
