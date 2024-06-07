@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ * Title: styles.css
+ * Author: Brock Hemsouvanh
+ * Date: 6/7/24
+ * Description: Global styles for the Nodebucket application
+ */
+
+ body {
+  background-color: #F5F5F5;
+  color: #333333;
+}
+
+h1 {
+  color: #0E1A40;
+}
+
+.card {
+  border: 1px solid #C0C0C0;
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  background-color: #0E1A40;
+  color: white;
+}
+
+.card-body {
+  background-color: white;
+}
+
+.btn {
+  background-color: #0E1A40;
+  color: white;
+}
+
+a {
+  color: #0E1A40;
+}
+
+a:hover {
+  color: #B08D57;
+}
