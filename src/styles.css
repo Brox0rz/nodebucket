@@ -2,41 +2,54 @@
  * Title: styles.css
  * Author: Brock Hemsouvanh
  * Date: 6/7/24
- * Description: Global styles for the Nodebucket application
+ * Description: Global styles for the Nodebucket application reflecting House Ravenclaw colors
  */
 
- body {
+/* Assignment instructions require a Harry Potter house color scheme. House Ravenclaw colors were chosen for the entire application */
+body {
   background-color: #F5F5F5;
   color: #333333;
 }
 
+/* Sets the color for all h1 elements */
 h1 {
-  color: #0E1A40;
+  color: #0E1A40; /* Dark Blue */
 }
 
+/* Styles for card elements, including border and margin */
 .card {
-  border: 1px solid #C0C0C0;
+  border: 1px solid #C0C0C0; /* Silver */
   margin-bottom: 1rem;
 }
 
+/* Styles for the header section of card elements, including background and text color */
 .card-header {
-  background-color: #0E1A40;
+  background-color: #0E1A40; /* Dark Blue */
   color: white;
 }
 
+/* Styles for the body section of card elements */
 .card-body {
   background-color: white;
 }
 
+/* Styles for buttons, including background and text color */
 .btn {
-  background-color: #0E1A40;
+  background-color: #0E1A40; /* Dark Blue */
   color: white;
 }
 
+/* Styles for anchor (a) elements */
 a {
-  color: #0E1A40;
+  color: #0E1A40; /* Dark Blue */
 }
 
+/* Styles for anchor (a) elements when hovered */
 a:hover {
-  color: #B08D57;
+  color: #B08D57; /* Bronze */
+}
+
+/* Adds margin to the top of the container-fluid elements to create vertical space */
+.container-fluid {
+  margin-top: 100px;
 }
