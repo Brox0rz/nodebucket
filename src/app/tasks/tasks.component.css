@@ -1,0 +1,57 @@
+/**
+ * Title: tasks.component.css
+ * Author: Brock Hemsouvanh
+ * Date: 6/12/24
+ * Description: CSS styles for the tasks component in Nodebucket application
+ */
+
+ .tasks-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 100px; /* Giving space so that content won't be hidden under the nav bar */
+}
+
+.tasks-columns {
+  display: flex;
+  justify-content: space-between; /* word wrap */
+}
+
+.tasks-column {
+  width: 45%;
+}
+
+.tasks-column h2 {
+  text-align: center;
+}
+
+.tasks-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 300px;
+}
+
+.tasks-form {
+  width: 100%; /* for responsive design */
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks-form input[type="text"] {
+  flex-grow: 1; /* to display across the entire (one) column */
+}
+
+.no-tasks {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.tasks-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}

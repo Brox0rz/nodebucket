@@ -2,7 +2,7 @@
  * Title: employee-route.js
  * Author: Professor Richard Krasso and Brock Hemsouvanh
  * Date: 6/3/24
- * Updated: 6/10/24 by Brock Hemsouvanh
+ * Updated: 6/12/24 by Brock Hemsouvanh
  * Description: Route for handling employee API requests
  */
 
@@ -17,6 +17,26 @@ const ajv = new Ajv(); // create a new instance of the Ajv object from the npm p
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * /api/employees/{empId}:
+ *   get:
+ *     summary: Get an employee by ID
+ *     parameters:
+ *       - in: path
+ *         name: empId
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: The employee ID
+ *     responses:
+ *       200:
+ *         description: Employee details
+ *       400:
+ *         description: Bad Request
+ *       404:
+ *         description: Not Found
+ */
 // Route to get an employee by ID
 router.get("/:empId", (req, res, next) => {
   try {
@@ -43,6 +63,26 @@ router.get("/:empId", (req, res, next) => {
   }
 });
 
+/**
+ * @swagger
+ * /api/employees/{empId}/tasks:
+ *   get:
+ *     summary: Get all tasks for an employee
+ *     parameters:
+ *       - in: path
+ *         name: empId
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: The employee ID
+ *     responses:
+ *       200:
+ *         description: A list of tasks
+ *       400:
+ *         description: Bad Request
+ *       404:
+ *         description: Not Found
+ */
 /**
  * findAllTasks API
  * @returns JSON array of all tasks
@@ -79,6 +119,39 @@ router.get('/:empId/tasks', (req, res, next) => {
 });
 
 /**
+ * @swagger
+ * /api/employees/{empId}/tasks:
+ *   post:
+ *     summary: Create a new task for an employee
+ *     parameters:
+ *       - in: path
+ *         name: empId
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: The employee ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               text:
+ *                 type: string
+ *             required:
+ *               - text
+ *     responses:
+ *       201:
+ *         description: Task created
+ *       400:
+ *         description: Bad Request
+ *       404:
+ *         description: Not Found
+ *       500:
+ *         description: Internal Server Error
+ */
+/**
  * Create Task API
  */
 const taskSchema = {
@@ -87,7 +160,7 @@ const taskSchema = {
     text: { type: 'string' }
   },
   required: ['text'],
-  additionalProperties: true
+  additionalProperties: false
 };
 
 router.post('/:empId/tasks', (req, res, next) => {

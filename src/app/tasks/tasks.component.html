@@ -1,1 +1,51 @@
-<p>tasks works!</p>
+<!--
+  Title: tasks.component.html
+  Author: Brock Hemsouvanh
+  Date: 6/12/24
+  Description: Home component template for displaying tasks (TODO) and completed tasks (DONE) in Nodebucket application
+-->
+
+<div class="tasks-container">
+  <h1>My Tasks</h1>
+
+  <!-- tasks form -->
+  <form #taskForm="ngForm" (ngSubmit)="createTask(taskForm); taskForm.reset();" class="tasks-form">
+    <input type="text" name="task" ngModel required placeholder="Enter a new task.">
+    <input type="submit" [disabled]="!taskForm.valid" value="Add Task">
+  </form>
+
+  <!-- tasks container -->
+  <div class="tasks-columns">
+    <!-- tasks to do column -->
+    <div class="tasks-column">
+      <h2>To Do</h2>
+      <div class="tasks-box">
+        <!-- no tasks found -->
+        <div *ngIf="todo.length === 0 || !todo" class="no-tasks">
+          No tasks to do yet!
+        </div>
+
+        <!-- tasks card -->
+        <div *ngFor="let item of todo" class="tasks-card">
+          {{ item.text }}
+        </div>
+      </div>
+    </div>
+
+    <!-- tasks done column -->
+    <div class="tasks-column">
+      <h2>Done</h2>
+      <div class="tasks-box">
+        <!-- no tasks found -->
+        <div *ngIf="done.length === 0 || !done" class="no-tasks">
+          No tasks done yet!
+        </div>
+
+        <!-- tasks card -->
+        <div *ngFor="let item of done" class="tasks-card">
+          {{ item.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
