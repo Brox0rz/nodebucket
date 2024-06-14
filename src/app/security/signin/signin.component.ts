@@ -68,10 +68,9 @@ export class SigninComponent {
         this.cookieService.set('session_user', empId, 1);  // set the session_user cookie
         this.cookieService.set('session_name', `${employee.firstName} ${employee.lastName}`, 1);  // set the session_name cookie
 
-        const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';  // check if there is a return URL
         this.isLoading = false;  // set isLoading to false to hide the loading spinner
 
-        this.router.navigate([returnUrl]);  // redirect users to the returnUrl or homepage
+        this.router.navigate(['/tasks']);  // redirect users to the tasks page
       },
       error: (err) => {
         this.isLoading = false;  // set isLoading to false to hide the loading spinner

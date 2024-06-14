@@ -1,0 +1,32 @@
+/**
+ * Title: home.component.css
+ * Author: Brock Hemsouvanh
+ * Date: 6/13/24
+ * Description: CSS styles for the home component in the Nodebucket application
+ */
+
+ .home-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  color: #0E1A40; /* Dark Blue (Ravenclaw colors) */
+}
+
+.signin-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0E1A40; /* Dark Blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.signin-link:hover {
+  background-color: #B08D57; /* Bronze */
+}
