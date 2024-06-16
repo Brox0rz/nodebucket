@@ -1,55 +1,68 @@
 /**
  * Title: styles.css
  * Author: Brock Hemsouvanh
- * Date: 6/7/24
+ * Date: 6/16/24
  * Description: Global styles for the Nodebucket application reflecting House Ravenclaw colors
  */
 
-/* Assignment instructions require a Harry Potter house color scheme. House Ravenclaw colors were chosen for the entire application */
+/* Ravenclaw theme colors */
+:root {
+  --ravenclaw-primary: #0e1a40;  /* A dark blue representing Ravenclaw's primary house color */
+  --ravenclaw-secondary: #946b2d;  /* A bronze color reflecting Ravenclaw's secondary color */
+  --ravenclaw-accent: #c0c0c0;  /* Silver for accents and highlights */
+  --background-grey: #2e2e2e;   /* Dark grey for background */
+  --card-background: #424242;   /* Slightly lighter grey for cards */
+}
+
+/* General body styling */
 body {
-  background-color: #F5F5F5;
-  color: #333333;
+  font-family: 'Merriweather', serif; /* Elegant typeface for a scholarly look */
+  color: var(--ravenclaw-primary);
+  background-color: var(--background-grey) !important; /* Dark grey background for the entire page */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Sets the color for all h1 elements */
-h1 {
-  color: #0E1A40; /* Dark Blue */
-}
-
-/* Styles for card elements, including border and margin */
-.card {
-  border: 1px solid #C0C0C0; /* Silver */
-  margin-bottom: 1rem;
-}
-
-/* Styles for the header section of card elements, including background and text color */
-.card-header {
-  background-color: #0E1A40; /* Dark Blue */
-  color: white;
-}
-
-/* Styles for the body section of card elements */
-.card-body {
-  background-color: white;
-}
-
-/* Styles for buttons, including background and text color */
-.btn {
-  background-color: #0E1A40; /* Dark Blue */
-  color: white;
-}
-
-/* Styles for anchor (a) elements */
+/* Global link styling */
 a {
-  color: #0E1A40; /* Dark Blue */
+  color: var(--ravenclaw-accent);
+  text-decoration: none; /* Removes underline from all links */
+
+  &:hover {
+    color: var(--ravenclaw-secondary);
+    text-decoration: underline; /* Underline on hover for better interaction visibility */
+  }
 }
 
-/* Styles for anchor (a) elements when hovered */
-a:hover {
-  color: #B08D57; /* Bronze */
+/* Navigation styling */
+.navbar, .toolbar {
+  background-color: var(--ravenclaw-primary) !important;
+  color: var(--ravenclaw-accent) !important;
 }
 
-/* Adds margin to the top of the container-fluid elements to create vertical space */
-.container-fluid {
-  margin-top: 100px;
+/* Container for main content area, providing padding and layout consistency */
+.main-container, .home-container {
+  padding: 20px;
+  background-color: var(--card-background); /* Grey background for cards */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: var(--ravenclaw-accent); /* Text color */
+}
+
+/* Specific styles for the contact card */
+.contact-card {
+  padding: 20px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: var(--ravenclaw-accent);
+}
+
+/* Contact container styling */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }

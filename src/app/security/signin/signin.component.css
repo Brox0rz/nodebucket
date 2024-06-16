@@ -1,0 +1,65 @@
+/**
+ * Title: signin.component.css
+ * Author: Brock Hemsouvanh
+ * Date: 6/16/24
+ * Description: CSS styles for the signin component in the Nodebucket application
+ */
+
+/* Container for the login form */
+.container {
+  padding-top: 100px; /* Ensure the container is not covered by the navbar */
+}
+
+/* Card styles */
+.card {
+  background-color: var(--card-background); /* Slightly lighter grey for cards */
+  color: var(--ravenclaw-accent); /* Text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: var(--ravenclaw-secondary); /* Bronze color for the title */
+}
+
+.card-title h2 {
+  color: var(--ravenclaw-secondary);
+}
+
+/* Form label styles */
+.form-label {
+  color: var(--ravenclaw-accent);
+}
+
+/* Input field styles */
+.form-control {
+  background-color: var(--ravenclaw-primary); /* Dark Blue */
+  color: var(--ravenclaw-accent);
+  border: 1px solid var(--ravenclaw-secondary); /* Bronze border */
+}
+
+/* Button styles */
+.btn {
+  background-color: var(--ravenclaw-secondary); /* Bronze */
+  color: var(--ravenclaw-primary); /* Dark Blue text */
+}
+
+.btn:hover {
+  background-color: var(--ravenclaw-primary); /* Dark Blue */
+  color: var(--ravenclaw-accent); /* Silver text */
+}
+
+/* Error message alert styles */
+.alert-danger {
+  background-color: var(--bs-danger-bg-subtle);
+  color: var(--bs-danger-text-emphasis);
+}
+
+/* Link styles */
+.text-dark {
+  color: var(--ravenclaw-primary); /* Dark Blue */
+}
+
+.text-underline-hover:hover {
+  text-decoration: underline;
+}

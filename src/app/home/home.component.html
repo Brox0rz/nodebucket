@@ -1,11 +1,22 @@
 <!--
   Title: home.component.html
   Author: Brock Hemsouvanh
-  Date: 6/13/24
+  Date: 6/16/24
   Description: Home component template for the Nodebucket application
 -->
 
-<div class="home-container">
-  <h1>Welcome To Nodebucket!</h1>
-  <a routerLink="/security/signin" class="signin-link">Please Sign In</a>
+<!-- Home Page -->
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card shadow">
+        <div class="card-title text-center border-bottom">
+          <h2 class="p-3">Welcome To Nodebucket!</h2>
+        </div>
+        <div class="card-body text-center">
+          <a routerLink="/security/signin" class="btn btn-dark">Please Sign In</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -10,11 +10,15 @@
   max-width: 960px;
   margin: 0 auto;
   padding-top: 100px; /* Giving space so that content won't be hidden under the nav bar */
+  background-color: var(--card-background); /* Ensure the background matches the theme */
+  color: var(--ravenclaw-accent); /* Ensure text color matches the theme */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .tasks-columns {
   display: flex;
-  justify-content: space-between; /* word wrap */
+  justify-content: space-between; /* Word wrap */
 }
 
 .tasks-column {
@@ -23,28 +27,32 @@
 
 .tasks-column h2 {
   text-align: center;
+  color: var(--ravenclaw-secondary); /* Bronze color for headers */
 }
 
 .tasks-box {
   border: 1px solid #ccc;
   padding: 10px;
   min-height: 300px;
+  background-color: var(--card-background);
+  color: var(--ravenclaw-accent);
 }
 
 .tasks-form {
-  width: 100%; /* for responsive design */
+  width: 100%; /* For responsive design */
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
 }
 
 .tasks-form input[type="text"] {
-  flex-grow: 1; /* to display across the entire (one) column */
+  flex-grow: 1; /* To display across the entire (one) column */
 }
 
-.no-tasks {
+.no-ttasks {
   text-align: center;
   margin-top: 20%;
+  color: var(--ravenclaw-accent);
 }
 
 .tasks-card {

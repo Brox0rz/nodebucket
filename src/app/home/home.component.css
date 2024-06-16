@@ -1,32 +1,36 @@
 /**
  * Title: home.component.css
  * Author: Brock Hemsouvanh
- * Date: 6/13/24
+ * Date: 6/16/24
  * Description: CSS styles for the home component in the Nodebucket application
  */
 
- .home-container {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 100px;
+ .container {
+  padding-top: 100px; /* Ensure the container is not covered by the navbar */
 }
 
-h1 {
-  color: #0E1A40; /* Dark Blue (Ravenclaw colors) */
+.card {
+  background-color: var(--card-background); /* Slightly lighter grey for cards */
+  color: var(--ravenclaw-accent); /* Text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.signin-link {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #0E1A40; /* Dark Blue */
-  color: white;
-  text-decoration: none;
+.card-title {
+  color: var(--ravenclaw-secondary); /* Bronze color for the title */
+}
+
+.card-title h2 {
+  color: var(--ravenclaw-secondary);
+}
+
+.btn {
+  background-color: var(--ravenclaw-primary); /* Dark Blue */
+  color: var(--ravenclaw-accent); /* Silver text */
   border-radius: 5px;
+  text-decoration: none;
 }
 
-.signin-link:hover {
-  background-color: #B08D57; /* Bronze */
+.btn:hover {
+  background-color: var(--ravenclaw-secondary); /* Bronze */
 }
