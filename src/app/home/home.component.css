@@ -2,6 +2,7 @@
  * Title: home.component.css
  * Author: Brock Hemsouvanh
  * Date: 6/16/24
+ * Updated: 6/21/24 by Brock Hemsouvanh
  * Description: CSS styles for the home component in the Nodebucket application
  */
 
@@ -33,4 +34,9 @@
 
 .btn:hover {
   background-color: var(--ravenclaw-secondary); /* Bronze */
+}
+
+.description {
+  font-size: 1.2em;
+  color: var(--ravenclaw-accent);
 }

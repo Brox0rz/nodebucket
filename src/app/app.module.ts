@@ -19,6 +19,8 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { ContactComponent } from './contact/contact.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ContactComponent } from './contact/contact.component';
     FooterComponent,
     BaseLayoutComponent,
     TasksComponent,
-    ContactComponent
+    ContactComponent,
+    PageNotFoundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

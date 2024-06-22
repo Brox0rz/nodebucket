@@ -2,7 +2,7 @@
  * Title: app-routing.module.ts
  * Author: Professor Krasso
  * Date: 8/5/23
- * Updated by Brock Hemsouvanh 6/7/2024
+ * Updated by Brock Hemsouvanh 6/21/2024
  */
 
 // imports statements
@@ -14,6 +14,8 @@ import { authGuard } from './shared/auth.guard';
 import { TasksComponent } from './tasks/tasks.component';
 import { ContactComponent } from './contact/contact.component';
 import { SigninComponent } from './security/signin/signin.component';
+import { AboutComponent } from './about/about.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 // routes array with a path, component, and title for each route in the application (e.g. home, about, contact, etc.)
 const routes: Routes = [
@@ -39,12 +41,25 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent,
-        canActivate: [ authGuard ],
       },
       {
         path: 'security/signin',
         component: SigninComponent,
         title: 'Nodebucket: Sign In'
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+        title: 'Nodebucket: About'
+      },
+      {
+        path: '404',
+        component: PageNotFoundComponent,
+        title: 'Nodebucket: 404 Not Found'
+      },
+      {
+        path: '**',
+        redirectTo: '/404'
       }
     ]
   },

@@ -1,0 +1,47 @@
+/**
+ * Title: page-not-found.component.css
+ * Author: Brock Hemsouvanh
+ * Date: 6/21/24
+ * Description: CSS styles for the custom 404 page in the Nodebucket application
+ */
+
+ .container-fluid {
+  margin-top: 50px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 100px; /* Add space from the top */
+}
+
+.travolta-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.travolta-img img {
+  max-width: 100%;
+}
+
+.accent-text {
+  color: var(--ravenclaw-accent);
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: var(--ravenclaw-accent);
+}
+
+.btn-primary {
+  background-color: var(--ravenclaw-primary);
+  border-color: var(--ravenclaw-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--ravenclaw-secondary);
+  border-color: var(--ravenclaw-secondary);
+}
