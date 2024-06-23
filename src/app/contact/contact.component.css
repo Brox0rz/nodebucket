@@ -1,5 +1,35 @@
 /* Title: contact.component.css
  * Author: Brock Hemsouvanh
- * Date: 6/16/24
+ * Date: 6/23/24
  * Description: CSS styles for the Contact Us component in Nodebucket application
  */
+
+.contact-container {
+  background-color: var(--card-background);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact-card {
+  border: 5px solid var(--ravenclaw-secondary);
+  background-color: var(--card-background);
+  color: var(--ravenclaw-accent);
+}
+
+.contact-card-body {
+  background-color: var(--card-background);
+  color: var(--ravenclaw-accent);
+}
+
+.text-ravenclaw-primary {
+  color: var(--ravenclaw-primary);
+}
+
+.text-ravenclaw-secondary {
+  color: var(--ravenclaw-secondary);
+}
+
+.centered-img {
+  margin: 20px auto;
+  display: block;
+}

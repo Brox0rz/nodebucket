@@ -2,9 +2,11 @@
   Title: tasks.component.html
   Author: Brock Hemsouvanh
   Date: 6/12/24
+  Updated: 6/22/2024 by Brock Hemsouvanh
   Description: Home component template for displaying tasks (TODO) and completed tasks (DONE) in Nodebucket application
 -->
 
+<!-- tasks.component.html -->
 <div class="tasks-container">
   <h1>My Tasks</h1>
 
@@ -19,15 +21,18 @@
     <!-- tasks to do column -->
     <div class="tasks-column">
       <h2>To Do</h2>
-      <div class="tasks-box">
+      <div cdkDropList id="todoList" class="tasks-box" [cdkDropListData]="todo" [cdkDropListConnectedTo]="['doneList']" (cdkDropListDropped)="drop($event)">
         <!-- no tasks found -->
         <div *ngIf="todo.length === 0 || !todo" class="no-tasks">
           No tasks to do yet!
         </div>
 
         <!-- tasks card -->
-        <div *ngFor="let item of todo" class="tasks-card">
+        <div *ngFor="let item of todo" cdkDrag class="tasks-card">
           {{ item.text }}
+          <button (click)="deleteTask(item._id)" class="btn">
+            <span class="material-icons">delete</span>
+          </button>
         </div>
       </div>
     </div>
@@ -35,15 +40,18 @@
     <!-- tasks done column -->
     <div class="tasks-column">
       <h2>Done</h2>
-      <div class="tasks-box">
+      <div cdkDropList id="doneList" class="tasks-box" [cdkDropListData]="done" [cdkDropListConnectedTo]="['todoList']" (cdkDropListDropped)="drop($event)">
         <!-- no tasks found -->
         <div *ngIf="done.length === 0 || !done" class="no-tasks">
           No tasks done yet!
         </div>
 
         <!-- tasks card -->
-        <div *ngFor="let item of done" class="tasks-card">
+        <div *ngFor="let item of done" cdkDrag class="tasks-card">
           {{ item.text }}
+          <button (click)="deleteTask(item._id)" class="btn">
+            <span class="material-icons">delete</span>
+          </button>
         </div>
       </div>
     </div>

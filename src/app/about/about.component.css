@@ -1,0 +1,34 @@
+.container {
+  padding-top: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.text-ravenclaw-primary {
+  color: #0E1A40;
+}
+
+.text-ravenclaw-secondary {
+  color: #946B2D;
+}
