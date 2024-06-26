@@ -1,26 +1,22 @@
 # Nodebucket
 
+Nodebucket is a task management application built with the MEAN stack (MongoDB, Express.js, Angular, Node.js). It is designed to help users prioritize, manage, and track their tasks effortlessly.
+
+## Features
+
+- **Task Management:** Create, update, and delete tasks.
+- **Drag and Drop:** Easily move tasks between different states (To Do, Doing, Done).
+- **User Authentication:** Secure sign-in for users.
+- **Responsive Design:** Optimized for various screen sizes.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+- Node.js (version 18.20.3)
+- npm (version 10.7.0)
+- Angular CLI (version 16.1.8)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 
