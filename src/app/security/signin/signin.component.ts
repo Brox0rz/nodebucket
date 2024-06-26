@@ -2,10 +2,11 @@
  * Title: signin.component.ts
  * Author: Professor Richard Krasso and Brock Hemsouvanh
  * Date: 6/5/24
+ * Updated: 6/25/24 by Brock Hemsouvanh
  * Description: Signin component for handling employee sign-in functionality in Nodebucket application
  */
 
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -23,7 +24,9 @@ export interface SessionUser {
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent {
+export class SigninComponent implements OnInit, AfterViewInit {
+  @ViewChild('empIdInput') empIdInput!: ElementRef; // ViewChild to reference the input element
+
   errorMessage: string;  // This is the error message
   sessionUser: SessionUser;  // This is the session user
   isLoading: boolean = false;  // This is the isLoading boolean
@@ -43,6 +46,13 @@ export class SigninComponent {
   ) {
     this.errorMessage = '';
     this.sessionUser = {} as SessionUser;
+  }
+
+  ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    this.empIdInput.nativeElement.focus(); // Set focus to the input element
   }
 
   // This is the signin method

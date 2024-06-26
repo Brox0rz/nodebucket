@@ -4,7 +4,7 @@
  * Description: CSS styles for the Contact Us component in Nodebucket application
  */
 
-.contact-container {
+ .contact-container {
   background-color: var(--card-background);
   padding: 20px;
   border-radius: 8px;
@@ -26,10 +26,22 @@
 }
 
 .text-ravenclaw-secondary {
-  color: var(--ravenclaw-secondary);
+  color: var(--ravenclaw-accent);
 }
 
 .centered-img {
   margin: 20px auto;
   display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
 }

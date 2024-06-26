@@ -23,12 +23,14 @@
 .card-text {
   font-size: 1.2rem;
   line-height: 1.5;
+  color: var(--ravenclaw-accent);
+  text-align: center;
 }
 
 .text-ravenclaw-primary {
   color: #0E1A40;
 }
 
-.text-ravenclaw-secondary {
+.text-ravenclaw-accent {
   color: #946B2D;
 }

@@ -2,7 +2,7 @@
   Title: signin.component.html
   Author: Professor Richard Krasso and Brock Hemsouvanh
   Date: 6/5/24
-  Updated: 6/9/24 by Brock Hemsouvanh
+  Updated: 6/25/24 by Brock Hemsouvanh
   Description: Signin component template for handling employee sign-in functionality in Nodebucket application
 -->
 
@@ -24,7 +24,8 @@
           <form [formGroup]="signinForm" (ngSubmit)="signin(); signinForm.reset();">
             <div class="mb-4">
               <label for="empId" class="form-label">Employee ID:</label>
-              <input type="text" class="form-control" id="empId" formControlName="empId" />
+              <!-- Template reference variable to input element -->
+              <input #empIdInput type="text" class="form-control" id="empId" formControlName="empId" />
             </div>
             <div class="d-grid">
               <button type="submit" class="btn btn-dark">

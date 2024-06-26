@@ -2,12 +2,11 @@
  * Title: tasks.component.ts
  * Author: Professor Richard Krasso and Brock Hemsouvanh
  * Date: 6/12/24
- * Updated: 6/22/2024 by Brock Hemsouvanh
- * Description: Tasks component for managing to-do and done tasks for employees in Nodebucket application
+ * Updated: 6/25/2024 by Brock Hemsouvanh
+ * Description: Tasks component for managing to-do, doing, and done tasks for employees in Nodebucket application
  */
 
-
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
@@ -23,6 +22,7 @@ export interface Item {
 export interface Employee {
   empId: number;
   todo: Item[];
+  doing: Item[];
   done: Item[];
 }
 
@@ -36,12 +36,17 @@ export class TasksComponent implements OnInit {
   empId: number;
   employee: Employee;
   todo: Item[];
+  doing: Item[];
   done: Item[];
+
+  // Reference to the input field
+  @ViewChild('taskInput') taskInput!: ElementRef;
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
     this.empId = parseInt(this.cookieService.get('session_user'), 10);
     this.employee = {} as Employee;
     this.todo = [];
+    this.doing = []; // Initialize doing tasks
     this.done = [];
   }
 
@@ -51,12 +56,18 @@ export class TasksComponent implements OnInit {
       next: (emp: any) => {
         this.employee = emp;
         this.todo = this.employee.todo || [];
+        this.doing = this.employee.doing || [];
         this.done = this.employee.done || [];
       },
       error: () => {
         console.error('Unable to get employee data for employee ID: ', this.empId);
       }
     });
+
+    // Set focus to the input field after the view initializes
+    setTimeout(() => {
+      this.taskInput.nativeElement.focus();
+    }, 0);
   }
 
   // Function to create a new task
@@ -94,12 +105,14 @@ export class TasksComponent implements OnInit {
       next: () => {
         console.log('Task deleted with id', taskId);
 
-        // Set todo and done arrays to empty if they are null
+        // Set todo, doing, and done arrays to empty if they are null
         if (!this.todo) this.todo = [];
+        if (!this.doing) this.doing = [];
         if (!this.done) this.done = [];
 
         // Filter the task arrays and remove the deleted task
         this.todo = this.todo.filter(t => t._id.toString() !== taskId);
+        this.doing = this.doing.filter(t => t._id.toString() !== taskId);
         this.done = this.done.filter(t => t._id.toString() !== taskId);
 
         // Set the success message
@@ -128,12 +141,12 @@ export class TasksComponent implements OnInit {
       );
       console.log('Moved item in array', event.container.data);
     }
-    this.updateTaskLists(this.empId, this.todo, this.done);
+    this.updateTaskLists(this.empId, this.todo, this.doing, this.done);
   }
 
   // Function to update the task lists in the database
-  updateTaskLists(empId: number, todo: Item[], done: Item[]) {
-    const payload = { todo, done };
+  updateTaskLists(empId: number, todo: Item[], doing: Item[], done: Item[]) { // Added doing to the parameter list
+    const payload = { todo, doing, done }; // Added doing to the payload
     console.log('Updating tasks with payload:', payload); // Log the payload
 
     this.http.put(`/api/employees/${empId}/tasks`, payload).subscribe({

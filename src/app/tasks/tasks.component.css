@@ -2,18 +2,19 @@
  * Title: tasks.component.css
  * Author: Brock Hemsouvanh
  * Date: 6/12/24
+ * Updated: 6/25/24 by Brock Hemsouvanh
  * Description: CSS styles for the tasks component in Nodebucket application
  */
 
  .tasks-container {
   width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding-top: 100px; /* Giving space so that content won't be hidden under the nav bar */
-  background-color: var(--card-background); /* Ensure the background matches the theme */
-  color: var(--ravenclaw-accent); /* Ensure text color matches the theme */
+  max-width: 80%;
+  margin: 100px auto 0 auto; /* To keep from being hidden under nav bar */
+  background-color: var(--card-background);
+  color: var(--ravenclaw-accent);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
 }
 
 .tasks-columns {
@@ -22,16 +23,16 @@
 }
 
 .tasks-column {
-  width: 45%;
+  width: 32%; /* Adjusted to fit three columns with gap in mind */
 }
 
-.tasks-column h2 {
+.tasks-column h2, h1 {
   text-align: center;
   color: var(--ravenclaw-secondary); /* Bronze color for headers */
 }
 
 .tasks-box {
-  border: 1px solid #ccc;
+  border: 4px solid var(--ravenclaw-primary); /* Primary color for borders */
   padding: 10px;
   min-height: 300px;
   background-color: var(--card-background);
@@ -43,23 +44,33 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .tasks-form input[type="text"] {
   flex-grow: 1; /* To display across the entire (one) column */
+  background-color: var(--ravenclaw-primary); /* Dark Blue background */
+  color: var(--ravenclaw-accent); /* Silver text */
+  border: 1px solid var(--ravenclaw-secondary); /* Bronze border */
 }
 
-.no-ttasks {
+.no-tasks {
   text-align: center;
   margin-top: 20%;
   color: var(--ravenclaw-accent);
 }
 
 .tasks-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  background-color: var(--ravenclaw-primary); /* Dark Blue background */
+  border: 1px solid #c0c0c0;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  color: var(--ravenclaw-accent); /* Silver text */
+  cursor: default; /* Ensure cursor remains an arrow when hovering over task card text */
+}
+
+.tasks-card .material-icons {
+  color: var(--card-background); /* Slightly lighter grey for trash can icons */
 }
